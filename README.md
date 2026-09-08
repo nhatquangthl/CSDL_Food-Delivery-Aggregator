@@ -5,7 +5,6 @@
 > **Nhóm thực hiện:** F&F
 
 
-
 ## Thành viên nhóm
 | STT | Họ và Tên | Mã Sinh Viên | Tên tài khoản Github | Email sinh viên |
 |:---:|:---|:---|:---|:---|
@@ -13,8 +12,7 @@
 | 2 | Nguyễn Tấn Tài | N25DCAT101 | NguyenTanTai190 | [n25dcat101@student.ptithcm.edu.vn](mailto:n25dcat101@student.ptithcm.edu.vn) |
 | 3 | Trần Thiên Hoàng Quân | N25DCAT097 | lailawan | [n25dcat097@student.ptithcm.edu.vn](mailto:n25dcat097@student.ptithcm.edu.vn) |
 
-## Cấu trúc Repository (Theo chuẩn ISO/IEC/IEEE)
-Dự án được tổ chức theo tiêu chuẩn tài liệu công nghiệp (Industrial Documentation Standards):
+## Cấu trúc Repository
 - `docs/`: Chứa tài liệu đặc tả yêu cầu (System Requirements), Business Rules và Data Dictionary (tuân thủ chuẩn định nghĩa dữ liệu).
 - `diagrams/`: Chứa sơ đồ khái niệm (Conceptual EER Diagram) áp dụng quy tắc chuyên môn hóa (Specialization) của Elmasri và sơ đồ vật lý (IE Crow's Foot).
 - `sql/`: *(Đang phát triển)* Chứa các file script DDL (khởi tạo bảng), DML (dữ liệu mock), Triggers và các câu truy vấn phân tích dữ liệu.
