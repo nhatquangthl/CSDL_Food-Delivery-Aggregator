@@ -7,11 +7,11 @@
 
 
 ## Thành viên nhóm
-| STT | Họ và Tên | Mã Sinh Viên | Tên tài khoản | 
-|:---:|:---|:---|:---|
-| 1 | Thân Lê Nhật Quang | N25DCAT099 | nhatquangthl | 
-| 2 | Nguyễn Tấn Tài | N25DCAT101 | NguyenTanTai190 |
-| 3 | Trần Thiên Hoàng Quân | N25DCAT097 | lailawan |
+| STT | Họ và Tên | Mã Sinh Viên | Tên tài khoản Github | Email sinh viên |
+|:---:|:---|:---|:---|:---|
+| 1 | Thân Lê Nhật Quang | N25DCAT099 | nhatquangthl | [n25dcat099@student.ptithcm.edu.vn](mailto:n25dcat099@student.ptithcm.edu.vn) | 
+| 2 | Nguyễn Tấn Tài | N25DCAT101 | NguyenTanTai190 | [n25dcat101@student.ptithcm.edu.vn](mailto:n25dcat101@student.ptithcm.edu.vn) |
+| 3 | Trần Thiên Hoàng Quân | N25DCAT097 | lailawan | [n25dcat097@student.ptithcm.edu.vn](mailto:n25dcat097@student.ptithcm.edu.vn) |
 
 ## Cấu trúc Repository (Theo chuẩn ISO/IEC/IEEE)
 Dự án được tổ chức theo tiêu chuẩn tài liệu công nghiệp (Industrial Documentation Standards):
