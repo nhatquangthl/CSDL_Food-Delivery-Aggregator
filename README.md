@@ -1,6 +1,6 @@
  # Food Delivery Aggregator SYSTEM (Mini-DoorDash)
 
-> **Học phần:** INT1313 (Database Systems)
+> **Học phần:** INT1313 Cơ sở dữ liệu (Database Systems)
 > **Giảng viên hướng dẫn:** Lê Hà Thanh
 > **Nhóm thực hiện:** F&F
 
