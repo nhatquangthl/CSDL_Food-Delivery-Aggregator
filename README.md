@@ -1,4 +1,4 @@
-# Food Delivery Aggregator SYSTEM (Mini-DoorDash)
+ # Food Delivery Aggregator SYSTEM (Mini-DoorDash)
 
 > **Học phần:** INT1313 (Database Systems)
 > **Giảng viên hướng dẫn:** Lê Hà Thanh
@@ -9,8 +9,8 @@
 | STT | Họ và Tên | Mã Sinh Viên | Tên tài khoản Github | Email sinh viên |
 |:---:|:---|:---|:---|:---|
 | 1 | Thân Lê Nhật Quang | N25DCAT099 | nhatquangthl | [n25dcat099@student.ptithcm.edu.vn](mailto:n25dcat099@student.ptithcm.edu.vn) | 
-| 2 | Nguyễn Tấn Tài | N25DCAT101 | NguyenTanTai190 | [n25dcat101@student.ptithcm.edu.vn](mailto:n25dcat101@student.ptithcm.edu.vn) |
-| 3 | Trần Thiên Hoàng Quân | N25DCAT097 | lailawan | [n25dcat097@student.ptithcm.edu.vn](mailto:n25dcat097@student.ptithcm.edu.vn) |
+| 2 | Trần Thiên Hoàng Quân | N25DCAT097 | lailawan | [n25dcat097@student.ptithcm.edu.vn](mailto:n25dcat097@student.ptithcm.edu.vn) |
+| 3 | Nguyễn Tấn Tài | N25DCAT101 | NguyenTanTai190 | [n25dcat101@student.ptithcm.edu.vn](mailto:n25dcat101@student.ptithcm.edu.vn) |
 
 ## Cấu trúc Repository
 - `docs/`: Chứa tài liệu đặc tả yêu cầu (System Requirements), Business Rules và Data Dictionary (tuân thủ chuẩn định nghĩa dữ liệu).
