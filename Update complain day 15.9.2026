@@ -1,0 +1,12 @@
+Complain 15.9.2026:
+- Yêu cầu bài toán (Problem Statement) chưa rõ ràng, chung chung => cần phải làm rõ vấn đề ở đây là gì
+- Mơ hồ về chuỗi chuyển trạng đơn hàng => cần được làm rõ, giải thích ý nghĩa, mục đích để làm gì, bao gồm những gì trong chuỗi, nó sẽ hoạt động như thế nào?
+
+Update complain 15.9.2026
+- Yêu cầu bài toán (Problem Statement): Bối cảnh thực trạng: Trong mô hình giao nhận đồ ăn truyền thống, việc phối hợp giữa Nhà hàng (Restaurant), Tài xế (Driver) và Khách hàng (Customers) phần lớn dựa vào các kênh PHI tập trung: điện thoại, nhóm chat(Zalo, Messenger, Facebook), hoặc sổ sách/ Excel ghi tay tại quầy. 
+Không có một nguồn dữ liệu chung nào được cả 3 nhóm đối tượng cùng truy cập và cập nhật theo thời gian thực. Điều này sẽ dẫn đến 3 nhóm khó khăn cụ thể sau:
+  + Thiếu dữ liệu Real-time về vị trí và trạng thái tài xế:
+    Khi một nhà hàng (Restaurant) muốn tìm tài xế (Drivers) để giao đơn, họ thường liên hệ theo danh sách quen biết hoặc gọi lần lượt qua điện thoai, vì không có cơ chế nào cho tài xế nào đang rảnh (Online/Active) và đang ở gần nhà hàng tại thời điểm đó. Hậu quả là thời gian từ lúc món ăn sẵn sàng (READY) đến lúc có tài xế nhận đơn (PICK-UP)
+    kéo dài không ổn định, và việc phân bổ đơn không dựa trên khoảng cách thực tế nên không tối ưu được quảng đường di chuyển.
+  + Dữ liệu đơn hàng và giá cả không nhất quán do quản lí thủ công:
+    
