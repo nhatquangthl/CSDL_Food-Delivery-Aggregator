@@ -9,4 +9,11 @@ Không có một nguồn dữ liệu chung nào được cả 3 nhóm đối tư
     Khi một nhà hàng (Restaurant) muốn tìm tài xế (Drivers) để giao đơn, họ thường liên hệ theo danh sách quen biết hoặc gọi lần lượt qua điện thoai, vì không có cơ chế nào cho tài xế nào đang rảnh (Online/Active) và đang ở gần nhà hàng tại thời điểm đó. Hậu quả là thời gian từ lúc món ăn sẵn sàng (READY) đến lúc có tài xế nhận đơn (PICK-UP)
     kéo dài không ổn định, và việc phân bổ đơn không dựa trên khoảng cách thực tế nên không tối ưu được quảng đường di chuyển.
   + Dữ liệu đơn hàng và giá cả không nhất quán do quản lí thủ công:
+    Khi thông tin đơn hàng được ghi nhận thủ công (qua tin nhắn hoặc sổ sách), phát sinh các sai sót: giá món ăn ghi nhận tại thời điểm đặt không khớp với giá do nhà hàng đã điều chỉnh sau đó nhưng chưa được cập nhật kịp; không có cơ chế xác định phiên bản đơn hàng nào là chính xác khi có nhiều lần chỉnh sửa; và không lưu lại lịch sử thay đổi
+    trạng thái đơn để tra cứu khi phát sinh khiếu nại.
+  + Không có khả năng theo dõi tiến độ đơn hàng xuyên suốt cho từng bên liên quan:
+    Khách hàng (Customers) không có cách nào biết đơn của mình đang ở trạng thái, công đoạn nào (đang chuẩn bị, đang nấu, đã có tài xế nhận đơn, đã có tài xế nhận và đang giao hàng,...) ngoài việc gọi điện trực tiếp hỏi nhà hàng (Restaurant). Nhân viên CSKH, khi tiếp nhận khiếu nại, không có công cụ để tra cứu nhanh toàn bộ lịch sử đơn hàng 
+    và vị trí tài xế (Driver) tại thời điểm xảy ra sự cố, khiến việc xử lí khiếu nại chậm và thiếu căn cứ xác thực yêu cầu khiếu nại từ Khách hàng (Customers).
+========>>> Cả 3 nhóm khó khăn trên khác nhau về biểu hiện, nhưng đều bắt nguồn từ cùng 1 nguyên nhân gốc: dữ liệu bị phân nhánh, không tập trung và không được đồng bộ theo thời gian thực giữa các bên tham gia (Nhà hàng, Tài xế, Khách hàng và Quản trị). Vì vậy, giải pháp cốt lõi của đồ án là xây dựng một hệ thống cơ sở dữ liệu tập trung,  
+đóng vai trò "trạm trung chuyển dữ liệu" (Single Source of Truth), quản lí toàn bộ vòng đời đơn hàng, dữ liệu không gian của tài xế, và trạng thái giao dịch theo thời gian thực.
     
