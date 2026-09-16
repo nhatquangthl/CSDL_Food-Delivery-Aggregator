@@ -1,0 +1,48 @@
+Mission 16/9/2026:
+  Update UR
+  Hình EER
+  Tạo bảng Logical
+------------------------------------
+A. UR (1.2.2)
+Entity: Khách hàng (CUSTOMER), Nhà hàng (RESTAURANT), Chủ nhà hàng (RESTAURANT_OWNER), Tài xế (DRIVER),
+Người dùng (USER), Đơn đặt (ORDER), Thực đơn (MENU_ITEM)
+
+ USER:
+  + Áp dụng chung cho tất cả mọi người có tài khoản trên ứng dụng: CUSTOMER, RESTAURANT_OWNER, DRIVER
+  + Quản lý, cập nhật thông tin cơ bản tài khoản (Họ tên, ảnh đại diện, số điện thoại)
+
+ CUSTOMER:
+  + Kế thừa: Có toàn bộ quyền hạn của USER
+  + Xem danh sách RESTAURANT (theo vị trí cụ ) và MENU_ITEM
+  + Tạo ORDER bằng cách đọc, chọn MENU_ITEM
+  + Theo dõi trạng thái ORDER được cập nhật theo RESTAURANT (thời gian dự kiến thực hiện ORDER) và DRIVER (vị trí, thời
+gian dự kiến giao ORDER)
+
+  DRIVER:
+  + Kế thừa: Có toàn bộ quyền hạn của USER
+  + Bật/tắt trạng thái hoạt động
+  + Nhận thông báo, chấp nhận hoặc từ chối ORDER khả dụng ở gần vị trí hiện tại, xem được lộ trình di chuyển (khoảng cách
+đến RESTAURANT và đến CUSTOMER)
+  + Cập nhật trạng thái ORDER (Đã nhận ORDER (ACCEPTED) -> Đã tới vị trí RESTAURANT nhận ORDER (ARRIVED) -> Đã Lấy ORDER và
+trên đường giao đến CUSTOMER (PICKED_UP) -> Đã giao cho CUSTOMER (DELIVERED))
+
+ RESTAUNRANT_OWNER:
+  + Kế thừa: Có toàn bộ quyền hạn của USER
+  + Tạo, đọc, sửa, xóa thông tin RESTAURANT
+  + Quản lý MENU_ITEM (tạo, đọc, sửa, xóa MENU_ITEM) thuộc về RESTAURANT
+  + Nhận thông báo, chấp nhận hoặc từ chối ORDER
+  + Cập nhật trạng thái ORDER (Đang thực hiện ORDER của CUSTOMER (COOKING) -> Sẵn sàng cho DRIVER giao ORDER (READY_FOR_PICKUP))
+
+ RESTAURANT:
+  + Cung cấp vị trí cụ thể, MENU_ITEM cho CUSTOMER
+  + Cung cấp vị trí cụ thể cho DRIVER để biết vị trí đến lấy ORDER
+  + MENU_ITEM được cập nhật, lưu trữ bởi RESTAURANT_OWNER
+  
+ ORDER:
+  + Cung cấp trạng thái ORDER (CUSTOMER lên ORDER (PENDING) -> CUSTOMER tạo hoàn thành ORDER (CONFIRMED) -> RESTAURANT chuẩn bị ORDER
+đã được tạo (READY_FOR_PICKUP) -> DRIVER đã nhận ORDER và trên đường giao tới CUSTOMER (PICKED_UP)) cho CUSTOMER
+
+ MENU_ITEM:
+  + Được quản lý bởi RESTAURANT_OWNER thuộc về RESTAURANT
+  + Cung cấp Thực đơn, đồ ăn, thức uống cho CUSTOMER
+  
