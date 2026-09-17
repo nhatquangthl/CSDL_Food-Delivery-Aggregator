@@ -1,27 +1,41 @@
-Nhiệm vụ: Làm bảng Overview cho các thực thể ở phần 1.2.2.                      
+Nội dung thực hiện:
+-Làm bảng Overview về thực thể và mô tả vai trò nghiệp vụ cho phần 1.2.1.
+-Ở thực thể Tài xế (Driver) mô tả vài trò nghiệp vụ được thêm "cập nhật vị trí thời gian thực".
+-Thêm thực thể mới và mô tả vai trò nghiệp vụ của của thực thể: User (Người dùng).
+-Các thực thể và mô tả vai trờ nghiệp vụ còn lại hoàn toàn là nội dung cũ không được thêm hay bớt gì nữa.
+Lưu ý:
+-Vấn đề thứ tự khá quan trọng, nếu thấy thứ tự có vấn đề, hãy trình bày trong lần họp nhóm sắp tới để kịp thời chỉnh sửa.
+-Các thành viên khách hoàn toàn có thể chỉnh sửa bảng bên dưới hoặc có thể liên hệ với tui để có thể chỉnh sửa phù hợp với các phần khác.
+-Còn nhiệm vụ căn lề sẽ thực hiện vào file chính thức của Pharse 2.
+-Các vấn đề khác thì liên hệ.
+
 ==========================================================================
 
-+――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│     Thực thể     │               Mô rả vai trò nghiệp vụ               │
-+――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│ USER             │ Lưu thông tin định danh và tài khoảnh cơ bản áp     │
-│                  │ dụng chung cho mọi người dùng                       │
-│――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│ CUSTOMER         │ Đặt món từ RESTAURANT, theo dõi trạng thái đơn hàng │
-│                  │ và tiến độ giao hàng                                │
-│――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│ DRIVER           │ Bật/tắt trạng thái nhận đơn, định vị GPS, tiếp nhận │
-│                  │ và cập nhật tiến độ giao đơn                        │
-│――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│ RESTAURANT_OWNER │ Quản lý thông tin nhà hàng và thiết lập danh mục    │
-│                  │ thực đơn                                            │
-│――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│ RESTAURANT       │ Cung cấp địa điểm thực tế, hiển thị danh sách món   │
-│                  │ ăn và tiếp nhận đơn                                 │
-│――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│ MENU_ITEM        │ Các món ăn/thức uống kèm giá niêm yết do nhà hàng   │
-│                  │ kinh doanh                                          │
-│――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
-│ ORDER            │ Lưu trữ chi tiết giao dịch, theo dõi thời gian và   │
-│                  │ quản lý chuỗi chuyển trạng thái đơn                 │
-+――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――+
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│      Thực thể      │                Mô tả vai trò nghiệp vụ                │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│ User               │ Lưu thông tin định danh và tài khoản cơ bản áp dụng   │ 
+│ (Người dùng)       │ chung cho mọi đối tượng (Họ tên, SĐT, Mật khẩu, Ảnh   │
+│                    │ đại diện); điều hướng chức năng và kiểm soát truy cập │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+  
+│ Khách hàng         │ Có nhu cầu tìm kiếm món ăn và trả tiền hoặc sử dụng   │
+│ (CUSTOMER)         │ sản phẩm từ các nhà hàng                              │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│ Chủ nhà hàng       │ Sở hữu và quản lý một hoặc nhiều nhà hàng trên hệ     │
+│ (RESTAURANT_OWNER) │ thống                                                 │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│ Nhà Hàng           │ Cung cấp dịch vụ đồ ăn, thức uống cho khách hàng có   │
+│ (RESTAURANT)       │ nhu cầu và được quản lý bởi chủ nhà hàng              │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│ Thực đơn           │ Món ăn hoặc thức uống kèm giá niêm yết, được liệt     │
+│ (Menu_Item)        │ kê bởi Nhà Hàng để phục vụ khách hàng                 │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│ Đặt đơn            │ Lưu chi tiết giao dịch, cố định giá tại thời điểm đặt │ 
+│ (Order)            │ và kiểm soát trạng thái đơn                           │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│ Tài xế             │ Có nhu cầu, khả năng tiếp nhận đơn hàng và thực hiện  │
+│ (Driver)           │ giao nhận, cập nhật vị trí thời gian thực             │
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
+│ Quản trị viên      │ Duyệt khóa tài khoản đối tác và xem báo cáo tổng quan │
+│ (Manager)          │ hệ thống                                              │ 
++――――――――――――――――――――+―――――――――――――――――――――――――――――――――――――――――――――――――――――――+
