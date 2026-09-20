@@ -1,6 +1,6 @@
 Complain 15.9.2026:
 - Yêu cầu bài toán (Problem Statement) chưa rõ ràng, chung chung => cần phải làm rõ vấn đề ở đây là gì
-- Mơ hồ về chuỗi chuyển trạng đơn hàng => cần được làm rõ, giải thích ý nghĩa, mục đích để làm gì, bao gồm những gì trong chuỗi, nó sẽ hoạt động như thế nào?
+- Mơ hồ về chuỗi chuyển trạng thái đơn hàng => cần được làm rõ, giải thích ý nghĩa, mục đích để làm gì, bao gồm những gì trong chuỗi, nó sẽ hoạt động như thế nào?
 
 Update complain 15.9.2026
 - Yêu cầu bài toán (Problem Statement): Bối cảnh thực trạng: Trong mô hình giao nhận đồ ăn truyền thống, việc phối hợp giữa Nhà hàng (Restaurant), Tài xế (Driver) và Khách hàng (Customers) phần lớn dựa vào các kênh PHI tập trung: điện thoại, nhóm chat(Zalo, Messenger, Facebook), hoặc sổ sách/ Excel ghi tay tại quầy. 
@@ -16,4 +16,6 @@ Không có một nguồn dữ liệu chung nào được cả 3 nhóm đối tư
     và vị trí tài xế (Driver) tại thời điểm xảy ra sự cố, khiến việc xử lí khiếu nại chậm và thiếu căn cứ xác thực yêu cầu khiếu nại từ Khách hàng (Customers).
 ========>>> Cả 3 nhóm khó khăn trên khác nhau về biểu hiện, nhưng đều bắt nguồn từ cùng 1 nguyên nhân gốc: dữ liệu bị phân nhánh, không tập trung và không được đồng bộ theo thời gian thực giữa các bên tham gia (Nhà hàng, Tài xế, Khách hàng và Quản trị). Vì vậy, giải pháp cốt lõi của đồ án là xây dựng một hệ thống cơ sở dữ liệu tập trung,  
 đóng vai trò "trạm trung chuyển dữ liệu" (Single Source of Truth), quản lí toàn bộ vòng đời đơn hàng, dữ liệu không gian của tài xế, và trạng thái giao dịch theo thời gian thực.
+
+- Chuỗi chuyển trạng thái đơn hàng: 
     
