@@ -1,0 +1,27 @@
+- Mục tiêu và phương pháp
+  Mục này chứng minh rằng toàn bộ 10 quan hệ trong Logical Model (mục 2.1.2) đạt dạng chuẩn 3NF và BNCF. Việc chuẩn hóa rằng loại bỏ dư thừa dữ liệu và ba dị thường thêm, cập 
+nhật, xóa, qua đó phục vụ mục tiêu "Single Source of Truth" của hệ thống (mục 1.1).
+- Dạng chuẩn, điều kiện và Cách kiểm tra trong đồ án
+
+Dạng chuẩn  |   Điều kiện                              |    Cách kiểm tra trong đồ án
+-----------------------------------------------------------------------------------------
+1NF         | Mọi thuộc tính nguyên tử, mỗi ô giá trị, |  Xét miền giá trị của từng cột.
+            |không có nhóm lặp                         |
+-----------------------------------------------------------------------------------------
+2NF         | Đạt 1NF và mọi thuộc tính không phụ thuộc|  Chỉ xét quan hệ có khóa ghép
+            |đầy đủ vào toàn bộ khóa(Không có phụ thuộc|(ORDER_ITEM); quan hệ có khóa đơn
+            |riêng phần}                               |đạt 2NF tự động.
+------------------------------------------------------------------------------------------
+3NF         | Đạt 2NF và không phụ thuộc vào bắt cầu:  |  Tìm FD giữa các thuộc tính không
+            |với mọi FD X -> A,X kà siêu khóa hoặc A là|khóa.
+            |thuộc tính khóa.                          |
+------------------------------------------------------------------------------------------
+BNCF        | Với mọi FD không tầm thường X -> Y,X phải|  Kiểm tra vế trái mọi FD bằng bao
+            |siêu khóa.                                |đóng X+.
+
+- Quy trình chứng minh cho từng quan hệ:
+  1. Xác định các khóa ứng viên từ PK và các ràng buộc UNIQUE.
+  2. Rứt ra tập phụ thuộc hàm (FD) từ Business Rules (mục 1.2.4) và ngữ nghĩa dữ liệu.
+  3. Kiểm tra lần lượt 1NF, 2NF, 3NF, BCNF; dùng bao đống X+ là siêu khóa.
+  4. Kết luận. Nếu vi phạm thì phân rã theo FD vi phạm, đảm bảo nổi không mất mát (lossless join) và bảo toàn FD.
+Kí hiệu: X -> Y là "X xác định hàm Y"; X+ là bao đóng của tập thuộc tính X; thuộc tính in đậm trong lược đồ là khóa chính.
