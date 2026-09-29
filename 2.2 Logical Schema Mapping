@@ -1,0 +1,61 @@
+2.2 Ánh xạ lược đồ:
+2.2.1 Ánh xạ lược đồ Siêu lớp/Tiểu lớp
+- Bảng USER
+    + Lược đồ: USER (user_id, user_type, full_name, phone_number, password_hash).
+    + Khóa chính (PK): user_id (Kiểu VARCHAR(10), bắt đầu bằng 'USR').
+
+- Bảng CUSTOMER
+    + Lược đồ: CUSTOMER (user_id, default_delivery_address, payment_token).
+    + Khóa chính (PK): user_id.
+    + Khóa ngoại (FK): user_id tham chiếu đến USER(user_id) (Xóa dạng CASCADE).
+
+- Bảng DRIVER
+    + Lược đồ: DRIVER (user_id, license_plate, is_active_order, location).
+    + Khóa chính (PK): user_id.
+    + Khóa ngoại (FK): user_id tham chiếu đến USER(user_id) (Xóa dạng CASCADE).
+
+- Bảng RESTAURANT_OWNER
+    + Lược đồ: RESTAURANT_OWNER (user_id, tax_id).
+    + Khóa chính (PK): user_id.
+    + Khóa ngoại (FK): user_id tham chiếu đến USER(user_id) (Xóa dạng CASCADE).
+
+2. Ánh xạ Thực thể mạnh và các Liên kết 1:N
+- Bảng RESTAURANT (Nhận FK từ liên kết 1:N MANAGES với RESTAURANT_OWNER).
+    + Lược đồ: RESTAURANT (restaurant_id, restaurant_name, address, location, owner_id).
+    + Khóa chính (PK): restaurant_id (Kiểu VARCHAR(10), bắt đầu bằng 'RES').
+    + Khóa ngoại (FK): owner_id tham chiếu đến RESTAURANT_OWNER(user_id).
+
+- Bảng MENU_ITEM (Nhận FK từ liên kết 1:N OFFERS với RESTAURANT).
+    + Lược đồ: MENU_ITEM (item_id, item_name, current_price, stock_status, restaurant_id).
+    + Khóa chính (PK): item_id (Kiểu VARCHAR(10), bắt đầu bằng 'ITM').
+    + Khóa ngoại (FK): restaurant_id tham chiếu đến RESTAURANT(restaurant_id).
+
+- Bảng ORDER (Nhận FK từ các liên kết 1:N PLACES với CUSTOMER, DELIVERS với DRIVER, RECEIVES với RESTAURANT).
+    + Lược đồ: ORDER (order_id, order_status, shipping_fee, total_amount, placed_at, picked_up_at, delivered_at, delivery_address, customer_id, restaurant_id, driver_id).
+    + Khóa chính (PK): order_id (Kiểu VARCHAR(10), bắt đầu bằng 'ORD').
+    + Khóa ngoại (FK):
+        . customer_id tham chiếu đến CUSTOMER(user_id).
+        . restaurant_id tham chiếu đến RESTAURANT(restaurant_id).
+        . driver_id tham chiếu đến DRIVER(user_id) (Cho phép NULL nếu chưa có tài xế nhận).
+
+3. Ánh xạ Thực thể yếu / Bảng trung gian (Liên kết N:M)
+- Bảng ORDER_ITEM
+    + Lược đồ: ORDER_ITEM (order_id, item_id, quantity, unit_price).
+    + Khóa chính (PK): Khóa phức hợp bao gồm (order_id, item_id).
+    + Khóa ngoại (FK):
+        . order_id tham chiếu đến ORDER(order_id).
+        . item_id tham chiếu đến MENU_ITEM(item_id).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
