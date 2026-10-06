@@ -1,5 +1,5 @@
-2.2 Ánh xạ lược đồ:
-2.2.1 Ánh xạ lược đồ Siêu lớp/Tiểu lớp
+2.2 Logical Schema Mapping
+2.2.1 Superclass / Subclass Schema Mapping
 - Bảng USER
     + Lược đồ: USER (user_id, user_type, full_name, phone_number, password_hash).
     + Khóa chính (PK): user_id (Kiểu VARCHAR(10), bắt đầu bằng 'USR').
@@ -19,7 +19,7 @@
     + Khóa chính (PK): user_id.
     + Khóa ngoại (FK): user_id tham chiếu đến USER(user_id) (Xóa dạng CASCADE).
 
-2. Ánh xạ Thực thể mạnh và các Liên kết 1:N
+2.2.2 Mapping of Strong Entity Types and 1:N Relationships
 - Bảng RESTAURANT (Nhận FK từ liên kết 1:N MANAGES với RESTAURANT_OWNER).
     + Lược đồ: RESTAURANT (restaurant_id, restaurant_name, address, location, owner_id).
     + Khóa chính (PK): restaurant_id (Kiểu VARCHAR(10), bắt đầu bằng 'RES').
@@ -38,7 +38,7 @@
         . restaurant_id tham chiếu đến RESTAURANT(restaurant_id).
         . driver_id tham chiếu đến DRIVER(user_id) (Cho phép NULL nếu chưa có tài xế nhận).
 
-3. Ánh xạ Thực thể yếu / Bảng trung gian (Liên kết N:M)
+2.2.3 Weak Entities & N:M Relationship Mapping
 - Bảng ORDER_ITEM
     + Lược đồ: ORDER_ITEM (order_id, item_id, quantity, unit_price).
     + Khóa chính (PK): Khóa phức hợp bao gồm (order_id, item_id).
