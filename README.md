@@ -19,7 +19,7 @@
 
 ## Trạng thái dự án
 - [x] **Giai đoạn 1:** Phân tích yêu cầu và định nghĩa Business Rules.
-- [x] **Giai đoạn 1:** Xây dựng Data Dictionary chi tiết kèm Ràng buộc.
 - [x] **Giai đoạn 2:** Thiết kế Conceptual EER Diagram.
-- [ ] **Giai đoạn 2:** Ánh xạ Logical Model (Relational Schema).
-- [ ] **Giai đoạn 3:** Viết SQL Scripts và Tối ưu hóa truy vấn.
+- [X] **Giai đoạn 2:** Ánh xạ Logical Model (Relational Schema).
+- [X] **Giai đoạn 3:** Xây dựng Data Dictionary chi tiết kèm Ràng buộc.
+- [ ] **Giai đoạn 4:** Viết SQL Scripts và Tối ưu hóa truy vấn.
