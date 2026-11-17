@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-2xl font-bold text-blue-700 mb-6">Góc nhìn: Khách Hàng (Customer)</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-bold text-lg border-b pb-2 mb-4">Đặt món mới</h3>
+        {% for m in menu %}
+        <form action="/customer/place_order" method="POST" class="flex justify-between items-center border p-3 rounded mb-2 hover:bg-gray-50">
+            <div>
+                <p class="font-bold">{{ m.item_name }} <span class="text-red-500 text-sm">({{ "{:,}".format(m.current_price) }}đ)</span></p>
+                <p class="text-xs text-gray-500">{{ m.restaurant_name }}</p>
+            </div>
+            <input type="hidden" name="item_id" value="{{ m.item_id }}">
+            <input type="hidden" name="restaurant_id" value="{{ m.restaurant_id }}">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-1 text-sm rounded font-bold shadow hover:bg-blue-700">Đặt ngay</button>
+        </form>
+        {% endfor %}
+    </div>
+
+    <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-bold text-lg border-b pb-2 mb-4">Lịch sử đơn hàng của bạn</h3>
+        {% for o in orders %}
+        <div class="mb-3 border-b pb-2 text-sm">
+            <span class="font-bold">{{ o.order_id }}</span> - Trạng thái: <span class="text-orange-600 font-bold">{{ o.order_status }}</span>
+            <p class="text-gray-600">Tổng tiền: {{ "{:,}".format(o.total_amount) }}đ</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

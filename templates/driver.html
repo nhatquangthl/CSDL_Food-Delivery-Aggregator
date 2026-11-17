@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-2xl font-bold text-green-600 mb-6">Góc nhìn: Tài Xế (Driver)</h2>
+<div class="bg-white p-6 rounded shadow border-t-4 border-green-500">
+    <h3 class="font-bold text-lg mb-4">Đơn hàng đang thực hiện</h3>
+    {% for o in orders %}
+        <form action="/driver/order/update" method="POST" class="flex items-center gap-4 mb-3 border p-4 rounded bg-green-50">
+            <input type="hidden" name="order_id" value="{{ o.order_id }}">
+            <div>
+                <p class="font-bold">{{ o.order_id }}</p>
+                <p class="text-sm text-gray-600">Giao đến: {{ o.delivery_address }}</p>
+            </div>
+            <span class="text-xs bg-yellow-200 text-yellow-800 px-2 py-1 font-bold rounded ml-auto">{{ o.order_status }}</span>
+            <select name="new_status" class="text-sm border p-1 rounded">
+                <option value="PICKED_UP">Đã lấy hàng (PICKED_UP)</option>
+                <option value="DELIVERED">Đã giao xong (DELIVERED)</option>
+            </select>
+            <button class="bg-green-600 text-white px-4 py-2 text-sm font-bold rounded">Xác nhận</button>
+        </form>
+    {% else %}
+        <p class="text-gray-500 text-center py-4">Chưa có đơn hàng nào được phân công.</p>
+    {% endfor %}
+</div>
+{% endblock %}

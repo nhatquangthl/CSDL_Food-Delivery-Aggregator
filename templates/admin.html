@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-2xl font-bold text-red-700 mb-6">Góc nhìn: Quản trị Hệ thống (System Admin)</h2>
+<div class="bg-white p-6 rounded shadow border-t-4 border-red-600 mb-6">
+    <h3 class="font-bold text-lg mb-4">Quản lý Tài Khoản (Đọc/Xóa)</h3>
+    <table class="w-full text-left text-sm border-collapse">
+        <tr class="bg-gray-100"><th class="p-2 border">ID</th><th class="p-2 border">Vai trò</th><th class="p-2 border">Họ tên</th><th class="p-2 border text-center">Xóa</th></tr>
+        {% for u in users %}
+        <tr>
+            <td class="p-2 border font-mono text-gray-500">{{ u.user_id }}</td>
+            <td class="p-2 border">{{ u.user_type }}</td>
+            <td class="p-2 border">{{ u.full_name }}</td>
+            <td class="p-2 border text-center">
+                <form action="/admin/delete_user" method="POST" onsubmit="return confirm('Xóa vĩnh viễn user này?');">
+                    <input type="hidden" name="user_id" value="{{ u.user_id }}">
+                    <button class="bg-red-500 text-white px-2 py-1 rounded text-xs">Xóa</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

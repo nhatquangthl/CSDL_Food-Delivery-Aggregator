@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-2xl font-bold text-orange-600 mb-6">Góc nhìn: Chủ Nhà Hàng (Restaurant Owner)</h2>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <!-- CRUD Menu Item cho Owner -->
+    <div class="bg-white p-6 rounded shadow border-t-4 border-orange-500">
+        <h3 class="font-bold text-lg mb-4">Thêm Thực Đơn Mới</h3>
+        <form action="/owner/menu/add" method="POST" class="grid grid-cols-2 gap-2">
+            <input type="text" name="item_name" placeholder="Tên món" required class="border p-2 rounded">
+            <input type="number" name="current_price" placeholder="Giá tiền" required class="border p-2 rounded">
+            <select name="restaurant_id" class="border p-2 rounded">
+                {% for r in restaurants %} <option value="{{ r.restaurant_id }}">{{ r.restaurant_name }}</option> {% endfor %}
+            </select>
+            <select name="stock_status" class="border p-2 rounded">
+                <option value="AVAILABLE">AVAILABLE (Còn hàng)</option>
+                <option value="OUT_OF_STOCK">OUT_OF_STOCK (Hết hàng)</option>
+            </select>
+            <button class="col-span-2 bg-orange-500 text-white py-2 rounded font-bold shadow hover:bg-orange-600">Lưu Món</button>
+        </form>
+    </div>
+
+    <!-- Cập nhật Trạng thái đơn -->
+    <div class="bg-white p-6 rounded shadow border-t-4 border-orange-500">
+        <h3 class="font-bold text-lg mb-4">Duyệt & Nấu Đơn Hàng (BR02)</h3>
+        {% for o in orders %}
+            {% if o.order_status in ['PENDING', 'CONFIRMED', 'PREPARING'] %}
+            <form action="/owner/order/update" method="POST" class="flex items-center gap-2 mb-3 border p-2 rounded bg-orange-50">
+                <input type="hidden" name="order_id" value="{{ o.order_id }}">
+                <span class="font-bold text-sm">{{ o.order_id }}</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">{{ o.order_status }}</span>
+                
+                <select name="new_status" class="text-sm border p-1 ml-auto rounded">
+                    <option value="CONFIRMED">Xác nhận (CONFIRMED)</option>
+                    <option value="PREPARING">Đang nấu (PREPARING)</option>
+                    <option value="READY">Nấu xong (READY)</option>
+                </select>
+                <button class="bg-green-600 text-white px-3 py-1 text-sm rounded">Cập nhật</button>
+            </form>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
