@@ -22,4 +22,4 @@
 - [x] **Giai đoạn 2:** Thiết kế Conceptual EER Diagram.
 - [X] **Giai đoạn 2:** Ánh xạ Logical Model (Relational Schema).
 - [X] **Giai đoạn 3:** Xây dựng Data Dictionary chi tiết kèm Ràng buộc.
-- [ ] **Giai đoạn 4:** Viết SQL Scripts và Tối ưu hóa truy vấn.
+- [X] **Giai đoạn 4:** Viết SQL Scripts và Tối ưu hóa truy vấn.
